@@ -1,164 +1,69 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-
-// function HelloWorld() {
-//     return (
-//         <div>
-//             <Hello />
-//             <World /> !
-//             <NameCells />
-//             <li> raw text no quote</li>
-//             raw text no quote
-//         </div>
-//     );
-// }
-
-// function Hello() {
-//     return (
-//         <span>Hello</span>
-//     );
-// }
-
-// function World() {
-//     return (
-//         <span>World!!</span>
-//     );
-// }
-
-// function NameCells() {
-//     return (
-//         // do not need the table tag
-//         <React.Fragment>
-//             <table>
-//                 <tr>
-//                     <th>First Name</th>
-//                     <th>Last Name</th>
-//                 </tr>
-//                 <tr>
-//                     <td>mike</td>
-//                     <td>harding</td>
-//                 </tr>
-//             </table>
-//         </React.Fragment>
-//     );
-// }
-
-// ReactDOM.render(
-//     <HelloWorld />,
-//     document.querySelector("#root")
-// );
-
-// EXERCISES
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// function MyThing() {
-//     // ...
-//     return (
-//         <span>
-//             <div className='book'>
-//                 <div className='title'>
-//                     The Title
-//                 </div>
-//                 <div className='author'>
-//                     The Author
-//                 </div>
-//                 <ul className='stats'>
-//                     <li className='rating'> 5 stars</li>
-//                     <li className='isbn'> 12-345678-910</li>
-//                 </ul>
-//             </div>
-//             <div>
-//                 Newline
-//                          Test
-//             </div>
-//             <div>
-//                 Empty
-//                 <span>Newlines</span>
-
-//                 <span>Here</span>
-//             </div>
-//             <div>
-//                 &nbsp;Non-breaking
-//                 &nbsp;Spaces&nbsp;
-//             </div>
-//             <div>
-//                 Line1 {' '} Line2
-//             </div>
-//         </span>
-//     );
-// }
-// ReactDOM.render(
-//     <MyThing />, document.getElementById('root')
-// );
-// *******************************
-
-// const e = React.createElement;
-
-// ReactDOM.render(
-//     e('div', null, 'Xxx'),
-//     document.getElementById('root')
-// );
+import './index.css';
 
 
-// function Greeting() {
-//     // Try all of these variations: //let username = "root";
-//     //let username = undefined; //let username = null;
-//     //let username = false;
-//     // Fill in the rest:
-//     // return (...)
-// };
-
-// function Xxx() {
-//     let username = undefined;
-//     return (
-//         <div>
-//             username;
-//         </div>
-//     );
-// };
-
-// ReactDOM.render(
-//     <Xxx />, document.getElementById('root')
-// );
-
-
-function Data() {
+function Avatar() {
     return (
-        <React.Fragment>
-            <td>mike</td>
-            <td>harding</td>
-            <td>12/77</td>
-        </React.Fragment>
+        <img
+            src="https://www.gravatar.com/avatar/nothing" className="avatar"
+            alt="avatar" />
     );
-};
+}
 
-function MyTable() {
+function Message() {
     return (
-        // do not need the table tag
-        <React.Fragment>
-            <table>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Bday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        {/* <td>mike</td>
-                        <td>harding</td>
-                        <td>12/7</td> */}
-                        <Data />
-                    </tr>
-                </tbody>
-            </table>
-        </React.Fragment>
+        <div className="message">
+            This is less than 140 characters.
+        </div>
     );
-};
+}
 
+function NameWithHandle() {
+    return (
+        <span className="name-with-handle">
+            <span className="name">Your Name</span>
+            <span className="handle">@yourhandle</span>
+        </span>
+    );
+}
+
+// buttons
+const Time = () => (
+    <span className="time">3h ago</span>
+);
+const ReplyButton = () => (
+    <i className="fa fa-reply reply-button" />
+);
+const RetweetButton = () => (
+    <i className="fa fa-retweet retweet-button" />
+);
+const LikeButton = () => (
+    <i className="fa fa-heart like-button" />
+);
+const MoreOptionsButton = () => (
+    <i className="fa fa-ellipsis-h more-options-button" />
+);
+
+function Tweet() {
+    return (
+        <div className="tweet">
+            <Avatar />
+            <div className="content">
+                <NameWithHandle />
+                <Time />
+                <Message />
+                <div className="buttons">
+                    <ReplyButton />
+                    <RetweetButton />
+                    <LikeButton />
+                    <MoreOptionsButton />
+                </div>
+            </div>
+        </div>
+    );
+}
 
 ReactDOM.render(
-    <MyTable />, document.getElementById('root')
+    <Tweet />, document.querySelector('#root')
 );
