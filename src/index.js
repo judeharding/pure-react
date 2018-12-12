@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Moment from 'react-moment';
-import 'moment-timezone';
+import moment from 'moment';
 
 
 // function Tweet() {
@@ -29,13 +28,15 @@ function NameWithHandle({ author }) {
 }
 
 const Time = ({ time }) => {
-    // const timeString = moment(time).fromNow();
+    const timeString = moment(time).fromNow();
+
     return (
         <span className="time">
-            {/* {timeString} */}
+            {timeString}
         </span>
     );
 };
+
 
 
 var testTweet = {
@@ -55,6 +56,7 @@ function Message({ text }) {
     );
 }
 
+// add the { tweet } prop, destructured
 function Tweet({ tweet }) {
     return (
         <div className="tweet">
