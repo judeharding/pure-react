@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import moment from 'moment';
+// import PropTypes from 'prop-types';
+
 
 
 // function Tweet() {
@@ -46,7 +48,7 @@ var testTweet = {
     },
     likes: 2,
     retweets: 0,
-    timestamp: "2016-07-30 21:24:37"
+    timestamp: "2018-07-30 21:24:37"
 };
 
 function Message({ text }) {
