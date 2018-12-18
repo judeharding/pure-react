@@ -30,28 +30,34 @@ function Stamp({ hash }) {
 
 function ToPerson(toPerson) {
     return (
-        <span>
-            TO Name <br />
-            123 Fake St.<br />
-            Boston, MA 02118
-        </span>
+        <div className="to">
+            <span>
+                TO Name <br />
+                123 Fake St.<br />
+                Boston, MA 02118
+            </span>
+        </div>
     );
 }
 
 function FromPerson(fromPerson) {
     return (
-        <span>
-            FROM Name <br />
-            123 Fake St.<br />
-            Boston, MA 02118
-        </span>
+        <div className="from">
+            <span>
+                FROM Name <br />
+                123 Fake St.<br />
+                Boston, MA 02118
+            </span>
+        </div>
     );
 }
 function Envelope(toPerson, fromPerson) {
     return (
-        FromPerson,
-        ToPerson,
-        Stamp
+        <div className="envelope">
+            <FromPerson />
+            <ToPerson />
+            <Stamp />
+        </div >
     )
 }
 
