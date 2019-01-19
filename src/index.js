@@ -66,5 +66,3 @@ ReactDOM.render(
     <Envelope label={Envelope} />, document.querySelector('#root')
 );
 
-
-// page 59
