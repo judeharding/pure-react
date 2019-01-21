@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import PropTypes from 'prop-types';
 
 // ex1
 
@@ -51,6 +52,13 @@ function FromPerson(fromPerson) {
         </div>
     );
 }
+
+//REQUIRING Components and the data expected (example)
+FromPerson.propTypes = {
+    from: PropTypes.string.isRequired
+}
+
+
 function Envelope(toPerson, fromPerson) {
     return (
         <div className="envelope">
@@ -60,6 +68,7 @@ function Envelope(toPerson, fromPerson) {
         </div >
     )
 }
+
 
 //Envelope to the index html
 ReactDOM.render(
