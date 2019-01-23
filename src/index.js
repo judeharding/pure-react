@@ -3,24 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import PropTypes from 'prop-types';
 
-// ex1
 
-// function AddressLabel(person) {
-//     return (
-//         <span>
-//             Full Name <br />
-//             123 Fake St.<br />
-//             Boston, MA 02118
-//         </span>
-//     );
-// }
-
-// //AddressLabel to the index html
-// ReactDOM.render(
-//     <AddressLabel person={AddressLabel} />, document.querySelector('#root')
-// );
-
-// ex2
+// ex3 credit card exercise
 
 function Stamp({ hash }) {
     var url = `https://www.gravatar.com/avatar/${hash}`;
