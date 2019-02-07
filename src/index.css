@@ -1,7 +1,7 @@
 .envelope {
     border: 1px solid blue;
     width: 750px;
-    min-height: 300px;
+    min-height: 280px;
     padding: 10px;
     display: flex;
     font-family: "Helvetica", arial, sans-serif; font-size: 14px;
@@ -16,8 +16,8 @@
 }
 
 .to {
-    margin-top: 80px;
-    margin-left: 60px;
+    margin-top: 120px;
+    margin-left: 100px;
     width: 200px;
 }
 
