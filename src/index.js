@@ -1,61 +1,76 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 // ex3 credit card exercise
 
-function Stamp({ hash }) {
-    var url = `https://www.gravatar.com/avatar/${hash}`;
-    return (
-        <img src={url} className="stamp" alt="stamp" />
-    );
-}
 
-function ToPerson(toPerson) {
+function BankName(bankName) {
     return (
-        <div className="to">
+        <div className="bank">
             <span>
-                TO Name <br />
-                123 Fake St.<br />
-                Boston, MA 02118
+                Big Bank, Inc. <br />
             </span>
         </div>
     );
 }
 
-function FromPerson(fromPerson) {
+function CcNumber(ccNumber) {
     return (
-        <div className="from">
+        <div className="ccnumber">
             <span>
-                FROM Name <br />
-                123 Fake St.<br />
-                Boston, MA 02118
+                1234 5678 9101 2134 <br />
             </span>
         </div>
     );
 }
 
-//REQUIRING Components and the data expected (example)
-FromPerson.propTypes = {
-    from: PropTypes.string.isRequired
+// //REQUIRING Components and the data expected (example)
+// CcNumber.propTypes = {
+//     ccNumber: PropTypes.number.isRequired
+// }
+
+function ExpDate(expDate) {
+    return (
+        <div className="date">
+            <span>
+                Valid Thru<br />
+                01/19 <br />
+            </span>
+        </div>
+    );
+}
+
+function PersonName(personName) {
+    return (
+        <div className="name">
+            <span>
+                CARDHOLDER NAME <br />
+            </span>
+        </div>
+    );
 }
 
 
-function Envelope(toPerson, fromPerson) {
+
+function CreditCard(personName, expDate, ccNumber, bankName) {
     return (
-        <div className="envelope">
-            <FromPerson />
-            <ToPerson />
-            <Stamp />
+        <div className="card">
+            <PersonName />
+            <ExpDate />
+            <CcNumber />
+            <BankName />
         </div >
     )
 }
 
 
-//Envelope to the index html
+
 ReactDOM.render(
-    <Envelope label={Envelope} />, document.querySelector('#root')
+    <CreditCard label={CreditCard} />, document.querySelector('#root')
 );
+
+
 
