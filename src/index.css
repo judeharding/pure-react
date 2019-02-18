@@ -1,9 +1,11 @@
-.checkbox-container.resize {
-    width: 10%;
-    height: auto;
+/* Their WORKING code  */
+body {
+    margin: 20px;
+    padding: 0;
+    font-family: sans-serif;
+    width: 600px;
+    height: 378px;
+    border-radius: 24px;
+    background-color: #2854A1;
   }
-
-  .pushpin-container.resize {
-    width: 10px;
-    height: auto;
-  }
+  
