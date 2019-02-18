@@ -3,44 +3,45 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Poster({ posterInfo }) {
-    var { image, title, caption } = posterInfo;
+function Email({ emailInfo }) {
+    var { checkbox, pushpin, sender, subject, date, blurb } = emailInfo;
 
     return (
-        <div className="poster">
-            <div className="image-container">
-                <img alt="Poster" src={image} />
+        <div className="email">
+            <div className="checkbox-container">
+                <img alt="checkbox" src={checkbox} />
             </div>
-            <div className="title">
-                <span className="first-letter">
-                    {title.substring(0, 1)}
-                </span>
-                <span className="center">
-                    {title.substring(1, title.length - 1)}
-                </span>
-                <span className="last-letter">
-                    {title.substring(title.length - 1)}
-                </span>
+            <div className="pushpin-container">
+                <img alt="pushpin" src={pushpin} />
             </div>
-            <div className="caption">{caption}</div>
+            <div className="sender">
+                {sender}
+            </div>
+            <div className="subject">
+                {subject}
+            </div>
+            <div className="date">
+                {date}
+            </div>
+            <div className="blurb">
+                {blurb}
+            </div>
         </div>
     );
 }
-// Poster.propTypes = {
-//     posterInfo: PropTypes.shape({
-//         image: PropTypes.string.isRequired,
-//         title: PropTypes.string.isRequired,
-//         caption: PropTypes.string.isRequired
-//     }).isRequired
-// };
 
-var posterInfo = {
-    image: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
-    title: "React",
-    caption: "The best thing since jQuery, probably."
+
+
+var emailInfo = {
+    checkbox: "http://chittagongit.com/images/check-icon-small/check-icon-small-10.jpg",
+    pushpin: "https://previews.123rf.com/images/oksanaoo/oksanaoo1708/oksanaoo170800069/83718432-vector-icon-red-push-pin-.jpg",
+    sender: "React Newsletter",
+    subject: "React Newsletter - Issue 36",
+    date: "July 15",
+    blurb: "React Newsletter Issue 36 - July 15th 2016 Read this issue on the web at http://www.react.com"
 };
 
 ReactDOM.render(
-    <Poster posterInfo={posterInfo} />,
+    <Email emailInfo={emailInfo} />,
     document.getElementById('root')
 );
