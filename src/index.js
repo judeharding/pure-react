@@ -3,44 +3,44 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-var cardInfo = {
-    bankName: "Big Bank, Inc.",
-    cardNumber: "1234 5678 8765 4321",
-    expirationDate: "8/19",
-    name: "Cardholder Name"
-};
+function Poster({ posterInfo }) {
+    var { image, title, caption } = posterInfo;
 
-function Logo({ hash }) {
-    var url = `https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwit-Kbw77ngAhUQ16wKHed1DBgQjRx6BAgBEAU&url=https%3A%2F%2Ffacebook.github.io%2Fcreate-react-app%2Fdocs%2Fadding-images-fonts-and-files&psig=AOvVaw0cTBsbOlpNSgy7BgtTxRu_&ust=1550187307767404{hash}`;
-    return (
-        <img src={url} className="logo" alt="logo" />
-    );
-}
-CreditCard.propTypes = {
-    card: PropTypes.shape({
-        bankName: PropTypes.string.isRequired,
-        cardNumber: PropTypes.string.isRequired,
-        expirationDate: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired
-    }).isRequired
-};
-
-function CreditCard({ card }) {
-    var { name, cardNumber, expirationDate, bankName } = card;
     return (
         <div className="poster">
-            <div className="bank-name">{bankName}</div>
-            <div className="logo">{cardNumber}</div>
-            <div className="first-four-digits">{cardNumber.substring(0, 4)}</div>
-            <div className="expiration">
-                <span className="valid-thru">Valid Thru</span> {expirationDate}
+            <div className="image-container">
+                <img alt="Poster" src={image} />
             </div>
-            <div className="name">{name}</div>
+            <div className="title">
+                <span className="first-letter">
+                    {title.substring(0, 1)}
+                </span>
+                <span className="center">
+                    {title.substring(1, title.length - 1)}
+                </span>
+                <span className="last-letter">
+                    {title.substring(title.length - 1)}
+                </span>
+            </div>
+            <div className="caption">{caption}</div>
         </div>
     );
 }
+// Poster.propTypes = {
+//     posterInfo: PropTypes.shape({
+//         image: PropTypes.string.isRequired,
+//         title: PropTypes.string.isRequired,
+//         caption: PropTypes.string.isRequired
+//     }).isRequired
+// };
+
+var posterInfo = {
+    image: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
+    title: "React",
+    caption: "The best thing since jQuery, probably."
+};
 
 ReactDOM.render(
-    <CreditCard card={cardInfo} />,
+    <Poster posterInfo={posterInfo} />,
     document.getElementById('root')
 );
