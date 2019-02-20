@@ -21,17 +21,11 @@ ComponentName.propTypes = {
     }).isRequired
 };
 
-function IconButton({ children }) {
+function IconButton() {
     return (
-        <button>
-            <i className="fas fa-bullseye" />
-            {/* below takes the text as a children prop b/c it will not be explicitly passed*/}
-            {children}
-        </button>
-    );
+        <span>Do The Thing</span>
+    )
 }
-
-
 function ComponentName({ prop }) {
     var { keyOne, keyTwo, keyThree, keyFour } = prop;
     //MUST HAVE A RETURN
@@ -52,7 +46,7 @@ function ComponentName({ prop }) {
             {/* don't forget to add the font awsome cdn to the head of the html */}
             <div> <i className="fas fa-apple-alt"></i> </div>
             <div> <img src="https://www.gravatar.com/avatar/nothing" className="avatar" alt="avatar" /> </div>
-            <IconButton children={"   Do The Thing"}></IconButton>
+            <div> <IconButton /> </div>
 
         </div>
     );
