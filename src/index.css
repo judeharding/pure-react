@@ -1,11 +1,18 @@
 /* Their WORKING code  */
 body {
-    margin: 20px;
-    padding: 0;
-    font-family: sans-serif;
-    width: 600px;
-    height: 378px;
-    border-radius: 24px;
-    background-color: #2854A1;
-  }
-  
+  margin: 20px;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: pink;
+  color: #fff;
+}
+
+.box {
+  position: relative;
+  width: 600px;
+  height: 378px;
+  border-radius: 24px;
+  background-color: #2854A1;
+  color: #fff;
+  padding-left: 40px;
+}
