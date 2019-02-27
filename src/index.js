@@ -68,3 +68,22 @@ ReactDOM.render(
 );
 
 
+// var posterContent = {
+//     title: "Star Wars",
+//     caption: "Best movie ever..."
+//   };
+
+//   function Poster({ posterStuff }) {
+//     var { title, caption } = posterStuff;
+
+//     return (
+//       <div>
+//         <span>{title}</span><span>{caption}</span>
+//       </div>
+//     );
+//   }
+
+//   ReactDOM.render(
+//     <Poster posterStuff={posterContent}/>,
+//     document.querySelector("#root")
+//   );
