@@ -42,3 +42,45 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+/////
+
+basic recipe
+
+HTML doc has a DIV in it called ROOT
+
+JS file has this basic code below:
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function HelloWorld() { 
+    return (
+    <div>Hello World!</div>
+    ); 
+}
+
+ReactDOM.render( <HelloWorld/>,
+    document.querySelector('#root'));
+
+(or more advanced code like:)
+
+var posterContent = {
+  title: "Star Wars",
+  caption: "Best movie ever..."
+};
+
+function Poster({ posterStuff }) {
+  var { title, caption } = posterStuff;
+
+  return (
+    <div>
+      <span>{title}</span><span>{caption}</span>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <Poster posterStuff={posterContent}/>,
+  document.querySelector("#root")
+);
