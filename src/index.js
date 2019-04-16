@@ -1,5 +1,5 @@
-
-import React from 'react';
+// import './mainimport.js'; CANNOT HAVE EXTERNAL FILE FOR IMPORTS
+import React from 'react';  // is equivalent to var React = require('react');
 import PropTypes from 'prop-types'; //for data validation
 import ReactDOM from 'react-dom';
 import './index.css';
