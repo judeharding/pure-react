@@ -46,11 +46,23 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 /////
 
-basic recipe
 
-HTML doc has a DIV in it called ROOT
 
-JS file has this basic code below:
+{/* here is a jsx comment */ }
+{
+    // Double-slash comments are
+    // OK in multi-line blocks.
+}
+
+
+
+BASIC RECIPE  
+
+1.)  HTML doc has a DIV in it called ROOT
+
+2.)  JS file has this basic code below:
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -63,7 +75,7 @@ function HelloWorld() {
 ReactDOM.render( <HelloWorld/>,
     document.querySelector('#root'));
 
-(or more advanced code like:)
+/////  (or more advanced code like:)
 
 var posterContent = {
   title: "Star Wars",
@@ -73,10 +85,17 @@ var posterContent = {
 function Poster({ posterStuff }) {
   var { title, caption } = posterStuff;
 
-  return (
+  return (  // NOTE if you don't wrap the return in parens, 
+            // you have to keep everthing being returned on one line
     <div>
       <span>{title}</span><span>{caption}</span>
     </div>
+
+    // PS -- if you need to show table cells, you will need to 
+    // wrap them in a <React.Fragment> <td> xxx </td> 
+    // b/c they are direct descendants of a tr and w/out this, 
+    // your DOM gets messed up -- 
+    // and you will have to import React, {Fragment} from 'react';
   );
 }
 
@@ -84,3 +103,8 @@ ReactDOM.render(
   <Poster posterStuff={posterContent}/>,
   document.querySelector("#root")
 );
+
+START thinking of components like small tables
+  TblBook contains a title, author, isbn fields
+
+  
