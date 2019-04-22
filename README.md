@@ -58,9 +58,16 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 BASIC RECIPE  
 
-1.)  HTML doc has a DIV in it called ROOT
+4-step process:
+1. Make a sketch of the end result
+2. Carve up the sketch into components 
+3. Give the components names
+4. Write the code!
 
-2.)  JS file has this basic code below:
+
+A.)  HTML doc has a DIV in it called ROOT
+
+B.)  JS file has this basic code below:
 
 
 import React from 'react';
@@ -107,4 +114,3 @@ ReactDOM.render(
 START thinking of components like small tables
   TblBook contains a title, author, isbn fields
 
-  
